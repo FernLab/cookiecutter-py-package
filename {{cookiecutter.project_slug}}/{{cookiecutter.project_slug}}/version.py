@@ -7,4 +7,4 @@
 """Version module for {{ cookiecutter.project_name }}."""
 
 __version__ = "{{ cookiecutter.version }}"
-__versionalias__ = "{% now 'local' %}_01"
+__versionalias__ = "{% now "local" %}_01"
