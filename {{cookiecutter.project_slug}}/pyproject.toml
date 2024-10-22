@@ -23,8 +23,21 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
-    # "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
-    "Natural Language :: English",
+    {% if cookiecutter.open_source_license == 'MIT' -%}
+    "License :: OSI Approved :: MIT License",
+    {% elif cookiecutter.open_source_license == 'EUPL-1.2' %}
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    {% elif cookiecutter.open_source_license == 'BSD-3-Clause' %}
+    "License :: OSI Approved :: BSD License",
+    {% elif cookiecutter.open_source_license == 'ISC' -%}
+    "License :: OSI Approved :: ISC License (ISCL)",
+    {% elif cookiecutter.open_source_license == 'Apache-2.0' -%}
+    "License :: OSI Approved :: Apache Software License",
+    {% elif cookiecutter.open_source_license == 'GPL-3.0-or-later' -%}
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    {% elif cookiecutter.open_source_license == 'NOASSERTION' -%}
+    # "License :: not yet set, add here later before publishing to PyPi!",
+    {% endif %}"Natural Language :: English",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12"
