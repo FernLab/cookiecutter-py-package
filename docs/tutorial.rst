@@ -69,7 +69,7 @@ Step 2: Generate a Python Package directory structure.
 
    .. code-block:: bash
 
-       git clone https://github.com/FernLab/cookiecutter-pypackage-fork.git
+       git clone https://github.com/FernLab/cookiecutter-py-package.git
 
 
 2. Generate the directory by setting parameters:

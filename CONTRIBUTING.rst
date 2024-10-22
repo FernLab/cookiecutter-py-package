@@ -1,3 +1,10 @@
+.. warning::
+    This page refers to the original version of `cookiecutter`_. If you want to contribute to the FERN.Lab version please check
+    `FERN.Lab cookiecutter-py-package`_.
+
+.. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter-pypackage
+.. _`FERN.Lab cookiecutter-py-package`: docs/tutorial.rst
+
 ============
 Contributing
 ============
