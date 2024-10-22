@@ -17,33 +17,19 @@ Features of FERNLab cookiecutter pypackage
 ------------------------------------------
 
 * Testing setup with ``unittest`` or ``pytest``
-* Tox_ testing: Setup to easily test for Python 3.6, 3.7, 3.8
 * Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
-* bump2version_: Pre-configured version bumping with a single command
 * Licence selection
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Preparation to release on conda-forge
 * Pre-commit_ tests to check code before pushing it to git
 
-Quickstart
-----------
+How to start
+------------
 
-For detailed instructions, see the `cookiecutter-pypackage tutorial`_!
+Please check the detailed instructions here: `cookiecutter-pypackage tutorial`_!
 
 .. _`cookiecutter-pypackage tutorial`: https://github.com/FernLab/cookiecutter-py-package/blob/main/docs/tutorial.rst
 
-Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
-
-    pip install -U cookiecutter
-
-Generate a Python package project::
-
-    cookiecutter https://github.com/FernLab/cookiecutter-py-package
-
-Then:
-
-* Create a git repo and put it there.
 
 Not Exactly What You Want?
 --------------------------
@@ -89,7 +75,6 @@ be a fork.
 * It's up to you whether or not to rename your fork/own version. Do whatever
   you think sounds good.
 
-.. _Tox: http://testrun.org/tox/
 .. _Sphinx: http://sphinx-doc.org/
 .. _bump2version: https://github.com/c4urself/bump2version
 .. _Punch: https://github.com/lgiordani/punch
