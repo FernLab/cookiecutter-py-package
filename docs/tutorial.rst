@@ -1,7 +1,7 @@
 Tutorial
 ========
 
-This tutorial refers to this FERNLab version of cookiecutter pypackage, which is a fork of `cookiecutter`_.
+This tutorial refers to this FERN.Lab version of cookiecutter pypackage, which is a fork of `cookiecutter`_.
 
 To start with, you will need access to GitHub or GitLab, depending on where you want to keep your package.
 If you want to publish on PyPi you need an account on `PyPI`_. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at `GitHub Help`_.
@@ -14,7 +14,7 @@ If you want to publish on PyPi you need an account on `PyPI`_. Create these befo
 PythonPackage
 =============
 
-This manual explains how to create a directory structure for a Python Package using the **Cookiecutter** Template from FERNLab.
+This manual explains how to create a directory structure for a Python Package using the **Cookiecutter** Template from FERN.Lab.
 
 Furthermore, it also explains how to create a GitLab repository for that package. So following are covered:
 
