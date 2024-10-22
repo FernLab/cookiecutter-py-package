@@ -75,7 +75,7 @@ be a fork.
 * It's up to you whether or not to rename your fork/own version. Do whatever
   you think sounds good.
 
-.. _Sphinx: http://sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _bump2version: https://github.com/c4urself/bump2version
 .. _Punch: https://github.com/lgiordani/punch
 .. _Poetry: https://python-poetry.org/

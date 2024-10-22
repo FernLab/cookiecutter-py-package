@@ -135,6 +135,6 @@ Using conda_ (latest version recommended), {{ cookiecutter.project_name }} is in
 
 
 .. _pip: https://pip.pypa.io
-.. _Python installation guide: http://docs.python-guide.org/en/latest/starting/installation/
+.. _Python installation guide: https://docs.python-guide.org/starting/installation/
 .. _conda: https://conda.io/docs
 .. _mamba: https://github.com/mamba-org/mamba

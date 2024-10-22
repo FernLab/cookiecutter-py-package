@@ -51,4 +51,4 @@ More Details
 ------------
 
 You can read more about Click at:
-http://click.pocoo.org/
+https://click.palletsprojects.com/en/8.1.x/
