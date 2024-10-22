@@ -1,7 +1,7 @@
 Tutorial
 ========
 
-This tutorial refers to the FERNLab version of cookiecutter pypackage, which is a fork of `cookiecutter`_.
+This tutorial refers to this FERNLab version of cookiecutter pypackage, which is a fork of `cookiecutter`_.
 
 To start with, you will need access to GitHub or GitLab, depending on where you want to keep your package.
 If you want to publish on PyPi you need an account on `PyPI`_. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at `GitHub Help`_.
@@ -29,8 +29,8 @@ Furthermore, it also explains how to create a GitLab repository for that package
 Step 1: Checking the pre-requirements.
 --------------------------------------
 
-Before generating the template, we need the **cookiecutter** to be installed. We also need the **git** version `2.28` or later. We recommend to use mamba/miniforge
-and have an active mamba environment. This can be created with `mamba create --name cookieenv python --no-default-packages` and then `mamba activate cookieenv`.
+Before generating the template, we need the **cookiecutter** to be installed. We also need the **git** version 2.28 or later. We recommend to use mamba/miniforge
+and have an active mamba environment. This can be created with ``mamba create --name cookieenv python --no-default-packages`` and then ``mamba activate cookieenv``.
 
 1.  Cookiecutter installation
 
@@ -49,6 +49,7 @@ and have an active mamba environment. This can be created with `mamba create --n
 3.  Updating git version if it is necessary
 
     - For Ubuntu users:
+
       .. code-block:: bash
 
           sudo add-apt-repository ppa:git-core/ppa
@@ -56,6 +57,7 @@ and have an active mamba environment. This can be created with `mamba create --n
           sudo apt-get upgrade -y git
 
     - For Windows users:
+
       .. code-block:: bash
 
           git update-git-for-windows
@@ -63,7 +65,7 @@ and have an active mamba environment. This can be created with `mamba create --n
 Step 2: Generate a Python Package directory structure.
 ------------------------------------------------------
 
-1. Clone the source code [FernLab's pypackage template repository](https://github.com/FernLab/cookiecutter-pypackage-fork/tree/fernlab_pypackage).
+1. Clone the source code from https://github.com/FernLab/cookiecutter-py-package
 
    .. code-block:: bash
 
@@ -95,19 +97,20 @@ Step 2: Generate a Python Package directory structure.
        "create_author_file": "y",
        "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "EUPL-1.2", "NOASSERTION"]
 
-Note: Depending on your project choose the appropriate License. For most of the projects it is recommended `option 4)`, the Apache License. Could be changed later on if necessary.
+Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 4), the Apache License. Could be changed later on if necessary.
 
 Step 3: Create gitlab repository.
 ---------------------------------
 
-As git version was already updated (at step 1.1.), follow the following steps: \
- **a.** Under a sub-group create a new project by clicking in **New project**. \
- **b.** Choose **Create blank project** \
- **c.** Give a project name at your choice, however, the `project slug` should be the same as the one given to the Python package. \
- **d.** Unset the option `Initialize repository without a README` and press **Create project**. \
- **e.** Follow the instructions to **Push an existing folder**. They are summarized here:
+As git version was already updated (at step 1.1.), follow the following steps:
+ * Under a sub-group create a new project by clicking in **New project**.
+ * Choose **Create blank project**
+ * Give a project name at your choice, however, the "project slug" should be the same as the one given to the Python package.
+ * Unset the option "Initialize repository without a README" and press **Create project**.
+ * Follow the instructions to **Push an existing folder**. They are summarized here:
 
 .. code-block:: bash
+
     cd <project_slug>
     git init --initial-branch=main
     git remote add origin git@git.gfz-potsdam.de:<group/subgroup/project_slug>.git
@@ -139,8 +142,8 @@ which are respectively for testing the whole package, lint style, urls, and docu
 Step 5. Create and attach a runner to the repository.
 -----------------------------------------------------
 
-**a.** Login to a mefe machine, preferable mefe4. \
-**b.** execute the following commands:
+* Login to a machine where you want to have your runner, for example mefe4.
+* Execute the following commands:
 
 .. code-block:: bash
 
@@ -159,15 +162,18 @@ Once you are asked for the username and password, use your email id and the mast
 
 In the above code, the group is our directory in the gitlab (here is fernlab) and the subgroup is the text comes between the group and the project_slug name.
 
-This will start building a docker image which will be the CI runner docker image. \
-**c.** Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check `Run untagged jobs`. Check `lock to current project`.
-Set a timeout if needed (can be left empty to use the default, can be changed later) and click on `create runner`. Please copy the token you are getting, paste it on your console and press **Enter**. \
-**d.** It will then ask for a name for the runner. Follow the following nomenclature:
+This will start building a docker image which will be the CI runner docker image.
 
-`<project_slug>_CI__v<package_version>__<mefe_machine>`
+* Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check ``Run untagged jobs``. Check ``lock to current project``.
+Set a timeout if needed (can be left empty to use the default, can be changed later) and click on ``create runner``. Please copy the token you are getting, paste it on your console and press **Enter**.
+* It will then ask for a name for the runner. Follow the following nomenclature:
 
-- version: since it is the first runner the version is `0.1.0`
-- mefe_machine: in our example `mefe4`
+.. code-block:: bash
+
+    <project_slug>_CI__v<package_version>__<mefe_machine>
+
+- version: since it is the first runner the version is ``0.1.0``
+- mefe_machine: in our example ``mefe4``
 - you can also add your name or a short version so people know who this runner belongs to.
 
 Once you press enter, the runner will be listed under **Settings** > **CI/CD** > **Runners** and you should now be able to see a pipeline running.

@@ -2,11 +2,12 @@
 Cookiecutter PyPackage
 ======================
 
-This page refers to the FERNLab version of cookiecutter pypackage, which is a fork of `cookiecutter-pypackage`_.
+This page refers to the FERNLab version of cookiecutter pypackage, which is a fork of  `cookiecutter-pypackage`_.
 
 .. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter-pypackage
 
 For more information on the original package please see:
+
 * GitHub repo: https://github.com/audreyfeldroy/cookiecutter-pypackage/
 * Documentation: https://cookiecutter-pypackage.readthedocs.io/
 * Free software: BSD license
