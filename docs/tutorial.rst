@@ -164,9 +164,9 @@ In the above code, the group is our directory in the gitlab (here is fernlab) an
 
 This will start building a docker image which will be the CI runner docker image.
 
-* Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check ``Run untagged jobs``. Check ``lock to current project``.
+Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check ``Run untagged jobs``. Check ``lock to current project``.
 Set a timeout if needed (can be left empty to use the default, can be changed later) and click on ``create runner``. Please copy the token you are getting, paste it on your console and press **Enter**.
-* It will then ask for a name for the runner. Follow the following nomenclature:
+It will then ask for a name for the runner. Follow the following nomenclature:
 
 .. code-block:: bash
 
