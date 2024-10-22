@@ -142,7 +142,7 @@ which are respectively for testing the whole package, lint style, urls, and docu
 Step 5. Create and attach a runner to the repository.
 -----------------------------------------------------
 
-* Login to a machine where you want to have your runner, for example mefe4.
+* Login to a machine where you want to have your runner, for example "machine4".
 * Execute the following commands:
 
 .. code-block:: bash
@@ -170,10 +170,10 @@ It will then ask for a name for the runner. Follow the following nomenclature:
 
 .. code-block:: bash
 
-    <project_slug>_CI__v<package_version>__<mefe_machine>
+    <project_slug>_CI__v<package_version>__<example_machine>
 
 - version: since it is the first runner the version is ``0.1.0``
-- mefe_machine: in our example ``mefe4``
+- example_machine: in our example ``machine4``
 - you can also add your name or a short version so people know who this runner belongs to.
 
 Once you press enter, the runner will be listed under **Settings** > **CI/CD** > **Runners** and you should now be able to see a pipeline running.
