@@ -50,7 +50,7 @@ add_pyup_badge
     Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge
 
 command_line_interface
-    Whether to create a console script using Click. Console script entry point will match the project_slug. Options: ['Click', 'Argparse', 'No command-line interface']
+    Console script entry point will match the project_slug. Options: '['Argparse', 'No command-line interface']
 
 create_author_file
     Whether to create an authors file
