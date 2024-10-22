@@ -78,8 +78,7 @@ Step 2: Generate a Python Package directory structure.
 
        cookiecutter cookiecutter-pypackage
 
-
-    You need to fill the following options:
+You need to fill the following options:
 
    .. code-block:: bash
 
