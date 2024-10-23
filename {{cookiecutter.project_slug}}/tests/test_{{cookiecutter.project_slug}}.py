@@ -14,8 +14,19 @@ import unittest
 {%- endif %}
 
 import {{ cookiecutter.project_slug }}
-{%- if cookiecutter.use_pytest == 'n' %}
+{%- if cookiecutter.use_pytest == 'y' %}
 
+@pytest.fixture
+def response():
+    """Sample pytest fixture.
+    See more at: https://doc.pytest.org/en/latest/explanation/fixtures.html
+    """
+
+def test_content(response):
+    """Sample pytest test function which prints the package version."""
+    assert {{ cookiecutter.project_slug }}.__version__ == "{{ cookiecutter.version }}"
+
+{%- else %}
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
     """Tests for `{{ cookiecutter.project_slug }}` package."""
