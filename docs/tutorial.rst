@@ -147,7 +147,7 @@ Step 5. Create and attach a runner to the repository.
 
 .. code-block:: bash
 
-    cd /path/to/your/dockerimage/directory
+    cd /path/to/your/directory
     git clone https://git.gfz-potsdam.de/<group/subgroup/project_slug>.git
 
 
