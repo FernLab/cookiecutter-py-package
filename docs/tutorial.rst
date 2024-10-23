@@ -69,21 +69,21 @@ Step 2: Generate a Python Package directory structure.
 
    .. code-block:: bash
 
-       git clone https://github.com/FernLab/cookiecutter-pypackage-fork.git
+       git clone https://github.com/FernLab/cookiecutter-py-package.git
 
 
 2. Generate the directory by setting parameters:
 
    .. code-block:: bash
 
-       cookiecutter cookiecutter-pypackage
+       cookiecutter cookiecutter-py-package
 
 You need to fill the following options:
 
    .. code-block:: bash
 
        "full_name": "YourName",
-       "email": "yourmail@gfz-potsdam.de",
+       "email": "your@mail.com",
        "github_username": "Your GitHub Name or GitLab Name/Groupname",
        "gitlab_subgroup_name": "Subgroup if any, (Can be left empty)",
        "project_name": "Name of your project. Don't use special characters",
@@ -97,7 +97,7 @@ You need to fill the following options:
        "create_author_file": "y",
        "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "EUPL-1.2", "NOASSERTION"]
 
-Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 4), the Apache License. Could be changed later on if necessary.
+Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 6), the EUPL License. Could be changed later on if necessary.
 
 Step 3: Create gitlab repository.
 ---------------------------------
@@ -106,7 +106,7 @@ As git version was already updated (at step 1.1.), follow the following steps:
  * Under a sub-group create a new project by clicking in **New project**.
  * Choose **Create blank project**
  * Give a project name at your choice, however, the "project slug" should be the same as the one given to the Python package.
- * Unset the option "Initialize repository without a README" and press **Create project**.
+ * Unset the option "Initialize repository with a README" and press **Create project**.
  * Follow the instructions to **Push an existing folder**. They are summarized here:
 
 .. code-block:: bash
@@ -147,7 +147,7 @@ Step 5. Create and attach a runner to the repository.
 
 .. code-block:: bash
 
-    cd /misc/fernlab1/misc/
+    cd /path/to/your/dockerimage/directory
     git clone https://git.gfz-potsdam.de/<group/subgroup/project_slug>.git
 
 
@@ -161,7 +161,6 @@ Once you are asked for the username and password, use your email id and the mast
 
 
 In the above code, the group is our directory in the gitlab (here is fernlab) and the subgroup is the text comes between the group and the project_slug name.
-
 This will start building a docker image which will be the CI runner docker image.
 
 Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check ``Run untagged jobs``. Check ``lock to current project``.
