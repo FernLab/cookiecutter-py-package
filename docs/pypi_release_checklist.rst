@@ -36,12 +36,6 @@ For Every Release
 
         python setup.py develop
 
-#. Run the tests:
-
-    .. code-block:: bash
-
-        tox
-
 #. Push the commit:
 
     .. code-block:: bash
