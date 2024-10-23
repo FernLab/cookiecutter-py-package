@@ -65,7 +65,7 @@ Similar Cookiecutter Templates
 Fork This / Create Your Own
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have differences in your preferred setup, I encourage you to fork this
+If you have differences in your preferred setup, we encourage you to fork this
 to create your own version. Or create your own; it doesn't strictly have to
 be a fork.
 
