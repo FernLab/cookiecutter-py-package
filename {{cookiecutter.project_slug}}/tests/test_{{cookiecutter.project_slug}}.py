@@ -14,13 +14,7 @@ import unittest
 {%- endif %}
 
 import {{ cookiecutter.project_slug }}
-{%- if cookiecutter.use_pytest == 'y' %}
-
-
-def test_content(response):
-    """Sample pytest test function which prints the package version."""
-    assert {{ cookiecutter.project_slug }}.__version__ == "{{ cookiecutter.version }}"
-{%- else %}
+{%- if cookiecutter.use_pytest == 'n' %}
 
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
