@@ -8,8 +8,6 @@ import datetime
 import pytest
 from cookiecutter.utils import rmtree
 
-from click.testing import CliRunner
-
 import importlib
 
 
