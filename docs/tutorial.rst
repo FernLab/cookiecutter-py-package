@@ -1,149 +1,185 @@
 Tutorial
 ========
 
-.. note:: Did you find any of these instructions confusing? `Edit this file`_
-          and submit a pull request with your improvements!
+This tutorial refers to this FERNLab version of cookiecutter pypackage, which is a fork of `cookiecutter`_.
 
-.. _`Edit this file`: https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master/docs/tutorial.rst
+To start with, you will need access to GitHub or GitLab, depending on where you want to keep your package.
+If you want to publish on PyPi you need an account on `PyPI`_. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at `GitHub Help`_.
 
-To start with, you will need a `GitHub account`_ and an account on `PyPI`_. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at `GitHub Help`_.
-
-.. _`GitHub account`: https://github.com/
 .. _`PyPI`: https://pypi.python.org/pypi
 .. _`GitHub Help`: https://help.github.com/
+.. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter-pypackage
 
 
-Step 1: Install Cookiecutter
-----------------------------
+PythonPackage
+=============
 
-First, you need to create and activate a virtualenv for the package project. Use your favorite method, or create a virtualenv for your new package like this:
+This manual explains how to create a directory structure for a Python Package using the **Cookiecutter** Template from FERNLab.
 
-.. code-block:: bash
+Furthermore, it also explains how to create a GitLab repository for that package. So following are covered:
 
-    virtualenv ~/.virtualenvs/mypackage
+1. Check the pre-requirements.
+2. Generate directory structure.
+3. Create gitlab repository.
+4. Run tests
+5. Create and attach a runner to the repository.
 
-Here, ``mypackage`` is the name of the package that you'll create.
+**Note!** The following instructions are for Ubuntu 22.04.
 
-Activate your environment:
+Step 1: Checking the pre-requirements.
+--------------------------------------
 
-.. code-block:: bash
+Before generating the template, we need the **cookiecutter** to be installed. We also need the **git** version 2.28 or later. We recommend to use mamba/miniforge
+and have an active mamba environment. This can be created with ``mamba create --name cookieenv python --no-default-packages`` and then ``mamba activate cookieenv``.
 
-    source bin/activate
-
-On Windows, activate it like this. You may find that using a Command Prompt window works better than gitbash.
-
-.. code-block:: powershell
-
-    > \path\to\env\Scripts\activate
-
-.. note::
-
-    If you create your virtual environment folder in a different location within your project folder, be sure to add that path to your .gitignore file.
-
-Install cookiecutter:
+1.  Cookiecutter installation
 
 .. code-block:: bash
 
-    pip install cookiecutter
+    mamba install cookiecutter
 
 
-Step 2: Generate Your Package
------------------------------
-
-Now it's time to generate your Python package.
-
-Use cookiecutter, pointing it at the cookiecutter-pypackage repo:
+2.  Verifying git version
 
 .. code-block:: bash
 
-    cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
-
-You'll be asked to enter various values to set the package up.
-If you don't know what to enter, press Enter to stick with the defaults.
+    git --version
 
 
-Step 3: Create a GitHub Repo
-----------------------------
+3.  Updating git version if it is necessary
 
-Go to your GitHub account and create a new repo named ``mypackage``, where ``mypackage`` matches the ``[project_slug]`` from your answers to running cookiecutter. This is so that pyup.io can find it when we get to Step 5.
+    - For Ubuntu users:
 
-You will find one folder named after the ``[project_slug]``. Move into this folder, and then setup git to use your GitHub repo and upload the code:
+      .. code-block:: bash
+
+          sudo add-apt-repository ppa:git-core/ppa
+          sudo apt update
+          sudo apt-get upgrade -y git
+
+    - For Windows users:
+
+      .. code-block:: bash
+
+          git update-git-for-windows
+
+Step 2: Generate a Python Package directory structure.
+------------------------------------------------------
+
+1. Clone the source code from https://github.com/FernLab/cookiecutter-py-package
+
+   .. code-block:: bash
+
+       git clone https://github.com/FernLab/cookiecutter-py-package.git
+
+
+2. Generate the directory by setting parameters:
+
+   .. code-block:: bash
+
+       cookiecutter cookiecutter-py-package
+
+You need to fill the following options:
+
+   .. code-block:: bash
+
+       "full_name": "YourName",
+       "email": "your@mail.com",
+       "github_username": "Your GitHub Name or GitLab Name/Groupname",
+       "gitlab_subgroup_name": "Subgroup if any, (Can be left empty)",
+       "project_name": "Name of your project. Don't use special characters",
+       "project_slug": "Must not contain whitespaces",
+       "project_short_description": "A short description of your package. (Can be left empty)",
+       "pypi_username": "In case you want to publish on PyPi add your username",
+       "version": "0.1.0",
+       "use_pytest": "y",
+       "add_pyup_badge": "n",
+       "command_line_interface": ["Argparse", "No command-line interface"],
+       "create_author_file": "y",
+       "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "EUPL-1.2", "NOASSERTION"]
+
+Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 6), the EUPL License. Could be changed later on if necessary.
+
+Step 3: Create gitlab repository.
+---------------------------------
+
+As git version was already updated (at step 1.1.), follow the following steps:
+ * Under a sub-group create a new project by clicking in **New project**.
+ * Choose **Create blank project**
+ * Give a project name at your choice, however, the "project slug" should be the same as the one given to the Python package.
+ * Unset the option "Initialize repository with a README" and press **Create project**.
+ * Follow the instructions to **Push an existing folder**. They are summarized here:
 
 .. code-block:: bash
 
-    cd mypackage
-    git init .
+    cd <project_slug>
+    git init --initial-branch=main
+    git remote add origin git@git.gfz-potsdam.de:<group/subgroup/project_slug>.git
     git add .
-    git commit -m "Initial skeleton."
-    git remote add origin git@github.com:myusername/mypackage.git
+    git commit -m "Initial commit"
     git push -u origin main
 
-Where ``myusername`` and ``mypackage`` are adjusted for your username and package name.
 
-You'll need a ssh key to push the repo. You can `Generate`_ a key or `Add`_ an existing one.
+Step 4: Run tests.
+------------------
 
-.. _`Generate`: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-.. _`Add`: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+Local Test:
+   Before pushing the codes to the GitLab repository and creating the corresponding runner, we need to do some local tests to make sure if the directory was generated successfully. To do that, the template provides some commands.
+
+   .. code-block:: bash
+
+        cd <project_slug>
+        mamba env create -f tests/CI_docker/context/environment_<project_slug>.yml
+        mamba activate <project_slug>
+        pip install .
+        make pytest
+        make lint
+        make urlcheck
+        make docs
 
 
-Step 4: Install Dev Requirements
---------------------------------
+which are respectively for testing the whole package, lint style, urls, and documentation.
 
-You should still be in the folder containing the ``requirements_dev.txt`` file.
+Step 5. Create and attach a runner to the repository.
+-----------------------------------------------------
 
-Your virtualenv should still be activated. If it isn't, activate it now. Install the new project's local development requirements:
+* Login to a machine where you want to have your runner, for example "machine4".
+* Execute the following commands:
 
 .. code-block:: bash
 
-    pip install -r requirements_dev.txt
+    cd /path/to/your/directory
+    git clone https://git.gfz-potsdam.de/<group/subgroup/project_slug>.git
 
 
-Step 5: Set Up Read the Docs
---------------------------
+Once you are asked for the username and password, use your email id and the master password.
 
-`Read the Docs`_ hosts documentation for the open source community. Think of it as Continuous Documentation.
+.. code-block:: bash
 
-Log into your account at `Read the Docs`_ . If you don't have one, create one and log into it.
-
-If you are not at your dashboard, choose the pull-down next to your username in the upper right, and select "My Projects". Choose the button to Import the repository and follow the directions.
-
-Now your documentation will get rebuilt when you make documentation changes to your package.
-
-.. _`Read the Docs`: https://readthedocs.org/
-
-Step 6: Set Up pyup.io
-----------------------
-
-`pyup.io`_ is a service that helps you to keep your requirements files up to date. It sends you automated
-pull requests whenever there's a new release for one of your dependencies.
-
-To use it, create a new account at `pyup.io`_ or log into your existing account.
-
-Click on the green ``Add Repo`` button in the top left corner and select the repo you created in Step 3. A popup will
-ask you whether you want to pin your dependencies. Click on ``Pin`` to add the repo.
-
-Once your repo is set up correctly, the pyup.io badge will show your current update status.
-
-.. _`pyup.io`: https://pyup.io/
-
-Step 7: Release on PyPI
------------------------
-
-The Python Package Index or `PyPI`_ is the official third-party software repository for the Python programming language. Python developers intend it to be a comprehensive catalog of all open source Python packages.
-
-When you are ready, release your package the standard Python way.
-
-See `PyPI Help`_ for more information about submitting a package.
-
-Here's a release checklist you can use: https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master/docs/pypi_release_checklist.rst
-
-.. _`PyPI`: https://pypi.python.org/pypi
-.. _`PyPI Help`: https://pypi.org/help/#publishing
+    cd <project_slug>/tests/CI_docker
+    chmod 755 build_<project_slug>_testsuite_image.sh
+    ./build_<project_slug>_testsuite_image.sh
 
 
-Having problems?
-----------------
+In the above code, the group is our directory in the gitlab (here is fernlab) and the subgroup is the text comes between the group and the project_slug name.
+This will start building a docker image which will be the CI runner docker image.
 
-Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our `Issues`_ page and create a new Issue. Be sure to give as much information as possible.
+Once it is built it will ask for a token, it is the one under **Settings** > **CI/CD** > **Runners** > **New Project Runner**: Leave Tags empty and check ``Run untagged jobs``. Check ``lock to current project``.
+Set a timeout if needed (can be left empty to use the default, can be changed later) and click on ``create runner``. Please copy the token you are getting, paste it on your console and press **Enter**.
+It will then ask for a name for the runner. Follow the following nomenclature:
 
-.. _`Issues`: https://github.com/audreyfeldroy/cookiecutter-pypackage/issues
+.. code-block:: bash
+
+    <project_slug>_CI__v<package_version>__<example_machine>
+
+- version: since it is the first runner the version is ``0.1.0``
+- example_machine: in our example ``machine4``
+- you can also add your name or a short version so people know who this runner belongs to.
+
+Once you press enter, the runner will be listed under **Settings** > **CI/CD** > **Runners** and you should now be able to see a pipeline running.
+
+Having trouble?
+---------------
+
+Go to our `Issues`_ page and create a new Issue. Be sure to give as much information as possible.
+
+.. _`Issues`: https://github.com/FernLab/cookiecutter-py-package/issues
