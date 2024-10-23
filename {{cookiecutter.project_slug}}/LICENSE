@@ -27,8 +27,6 @@ Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}
 
 Licensed under EUPL v1.2 or later ONLY
 
-Copyright (c) 2022, FERN.Lab
-
                       EUROPEAN UNION PUBLIC LICENCE v. 1.2
                       EUPL © the European Union 2007, 2016
 
