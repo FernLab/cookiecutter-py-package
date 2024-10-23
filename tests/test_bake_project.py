@@ -198,4 +198,3 @@ def test_bake_with_no_console_script(cookies):
     project_path, project_slug, project_dir = project_info(result)
     found_project_files = os.listdir(project_dir)
     assert "python_boilerplate_cli.py" not in found_project_files
-
