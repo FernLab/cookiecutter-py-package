@@ -1,4 +1,3 @@
-#syntax=docker/dockerfile:experimental
 #!/usr/bin/env bash
 # SPDX-License-Identifier: {{ cookiecutter.open_source_license }}
 # FileType: SCRIPT
