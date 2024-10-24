@@ -1,3 +1,10 @@
+.. warning::
+    This page refers to the original version of `cookiecutter`_. If you want to contribute to the FERN.Lab version please check
+    `FERN.Lab cookiecutter-py-package`_.
+
+.. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter-pypackage
+.. _`FERN.Lab cookiecutter-py-package`: docs/tutorial.rst
+
 ============
 Contributing
 ============
@@ -129,24 +136,12 @@ development. Please note this documentation assumes you already have
 
 ::
 
-7. Before raising a pull request you should also run tox. This will run the
-   tests across different versions of Python:
-
-   .. code-block:: bash
-
-        $ tox
-
-   If you are missing flake8, pytest and/or tox, just `pip install` them into
-   your virtualenv.
-
-::
-
-8. If your contribution is a bug fix or new feature, you may want to add a test
+7. If your contribution is a bug fix or new feature, you may want to add a test
    to the existing test suite. See section Add a New Test below for details.
 
 ::
 
-9. Commit your changes and push your branch to GitHub:
+8. Commit your changes and push your branch to GitHub:
 
    .. code-block:: bash
 
@@ -156,7 +151,7 @@ development. Please note this documentation assumes you already have
 
 ::
 
-10. Submit a pull request through the GitHub website.
+9. Submit a pull request through the GitHub website.
 
 ::
 
@@ -170,10 +165,6 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put your
    new functionality into a function with a docstring, and add the feature to
    the list in README.rst.
-
-3. The pull request should work for Python 3.6 and 3.7, 3.8 and for PyPy. Check
-   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests and
-   make sure that the tests pass for all supported Python versions.
 
 Add a New Test
 --------------
@@ -208,16 +199,7 @@ To write and run your new test, follow these steps:
 
 ::
 
-4. (Optional) Run the tests with tox to ensure that the code changes work with
-   different Python versions:
-
-   .. code-block:: bash
-
-        $ tox
-
-::
-
-5. Proceed work on your bug fix or new feature or restore your changes. To
+4. Proceed work on your bug fix or new feature or restore your changes. To
    restore your stashed changes and confirm their restoration:
 
    .. code-block:: bash
@@ -227,7 +209,7 @@ To write and run your new test, follow these steps:
 
 ::
 
-6. Rerun your test and confirm that your test passes. If it passes,
+5. Rerun your test and confirm that your test passes. If it passes,
    congratulations!
 
 .. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage

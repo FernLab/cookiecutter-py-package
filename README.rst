@@ -2,7 +2,7 @@
 Cookiecutter PyPackage
 ======================
 
-This page refers to the FERNLab version of cookiecutter pypackage, which is a fork of  `cookiecutter-pypackage`_.
+This page refers to the FERN.Lab version of cookiecutter pypackage, which is a fork of  `cookiecutter-pypackage`_.
 
 .. _`cookiecutter`: https://github.com/audreyfeldroy/cookiecutter-pypackage
 
@@ -13,7 +13,7 @@ For more information on the original package please see:
 * Free software: BSD license
 * Discord: https://discord.gg/PWXJr3upUE
 
-Features of FERNLab cookiecutter pypackage
+Features of FERN.Lab cookiecutter pypackage
 ------------------------------------------
 
 * Testing setup with ``unittest`` or ``pytest``
@@ -75,7 +75,7 @@ be a fork.
 * It's up to you whether or not to rename your fork/own version. Do whatever
   you think sounds good.
 
-.. _Sphinx: http://sphinx-doc.org/
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _bump2version: https://github.com/c4urself/bump2version
 .. _Punch: https://github.com/lgiordani/punch
 .. _Poetry: https://python-poetry.org/

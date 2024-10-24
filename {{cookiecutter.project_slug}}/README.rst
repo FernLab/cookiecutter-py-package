@@ -80,9 +80,9 @@ Developed by
 Credits
 ------------
 
-This package was created with Cookiecutter_ and the `fernlab/cookiecutter-pypackage`_ project template.
+This package was created with Cookiecutter_ and the `fernlab/cookiecutter-py-package`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`fernlab/cookiecutter-pypackage`: https://github.com/fernlab/cookiecutter-pypackage
+.. _`fernlab/cookiecutter-py-package`: https://github.com/fernlab/cookiecutter-py-package
 .. _coverage: {{ pagesurl }}/coverage/
 .. _pytest: {{ pagesurl }}/test_reports/report.html

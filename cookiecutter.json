@@ -1,5 +1,5 @@
 {
-  "full_name": "FernLab",
+  "full_name": "FERN.Lab",
   "email": "fernlab@gfz-potsdam.de",
   "github_username": "fernlab",
   "gitlab_group_or_username": "{{ cookiecutter.github_username }}",
