@@ -23,7 +23,8 @@ echo "#### Build runner docker image"
 if [[ "$(docker images ${runner_tag} | grep ${runner_tag} 2> /dev/null)" != "" ]]; then
   docker rmi ${runner_tag}
 fi
-docker build --network=host -f ${context_dir}/${dockerfile} -m 20G -t ${runner_tag} ${context_dir}
+DOCKER_BUILDKIT=1 docker build --network=host -f ${context_dir}/${dockerfile} -m 20G -t ${runner_tag} ${context_dir}
+
 
 # create the gitlab-runner docker container for the current project
 # Remove packages
