@@ -59,7 +59,7 @@ clean-test: ## remove test and coverage artifacts
 
 lint: ## check for style issues 
 	{%- if cookiecutter.use_precommit == 'y' %}
-	@pre-commit run --files ./* {{ cookiecutter.project_slug }}/* | tee tests/linting/pre-commit-output.txt 2>&1; \
+	@PRE_COMMIT_COLOR=never pre-commit run --files ./* {{ cookiecutter.project_slug }}/* | tee tests/linting/pre-commit-output.txt 2>&1; \
     if [ $$? -eq 0 ]; then \
         echo "pre-commit passed successfully."; \
     else \
