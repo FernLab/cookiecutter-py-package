@@ -16,10 +16,13 @@ dependencies:
   - pytest-cov
   - urlchecker
   # lint requirements
+  {%- if cookiecutter.use_precommit == 'y' %}
+  - pre-commit
+  {%- else %}
   - flake8
   - pycodestyle
   - pydocstyle
-  - pylint
+  {%- endif %}
   # doc requirements
   - sphinx>=4.1.1
   - sphinx-autodoc-typehints
@@ -29,8 +32,6 @@ dependencies:
   # deployment requirements
   - python-build
   - twine
-  # lint requirements
-  - pre-commit
 
   - pip:
     - pytest-reporter-html1

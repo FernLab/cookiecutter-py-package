@@ -67,18 +67,29 @@ doc = [
     "sphinx-autodoc-typehints",
     "numpydoc>=1.7"
 ]
+
 test = [
     "pytest>=3",
     "pytest-cov",
     "pytest-reporter-html1",
     "urlchecker"
 ]
+
 lint = [
-    "pre-commit"
+    {%- if cookiecutter.use_precommit == 'y' %}
+    "pre-commit",
+    {%- else %}
+    "flake8",
+    "pycodestyle", 
+    "pydocstyle"
+    {%- endif %}
 ]
+
 dev = [
     "coverage",     # testing
+    {%- if cookiecutter.use_precommit == 'y' %}
     "pre-commit",   # linting
+    {%- endif %}
     "pytest",       # testing
     "twine",        # deployment
     "build"         # deployment
@@ -90,6 +101,14 @@ dev = [
 "Documentation" = "https://fernlab.git-pages.gfz-potsdam.de/{{cookiecutter.__gh_slug}}/doc/"
 "Change log" = "https://git.gfz-potsdam.de/{{cookiecutter.__gh_slug}}/-/blob/main/HISTORY.rst"
 # "Zenodo" = "https://zenodo.org/record/doi_number"
+
+{%- if cookiecutter.use_precommit == 'y' %}
+[tool.ruff]
+# Top-level settings for Ruff, like exclusion patterns or file line endings, can go here.
+
+[tool.ruff.format]
+docstring-code-format = true
+{%- endif %}
 
 [tool.setuptools]
 zip-safe = false
