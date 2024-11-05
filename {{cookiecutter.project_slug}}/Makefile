@@ -70,19 +70,11 @@ urlcheck: ## check for dead URLs
 	urlchecker check . --file-types .py,.rst,.md,.json
 
 test: ## run tests quickly with the default Python
-{%- if cookiecutter.use_pytest == 'y' %}
 	pytest
-{%- else %}
-	## add testsuite command
-{%- endif %}
 
 coverage: ## check code coverage quickly with the default Python
 	coverage erase
-{%- if cookiecutter.use_pytest == 'y' %}
 	coverage run --source {{ cookiecutter.project_slug }} -m pytest
-{%- else %}
-	## add testsuite command
-{%- endif %}
 	coverage combine 	# must be called in order to make coverage work in multiprocessing
 	coverage report -m
 	coverage html

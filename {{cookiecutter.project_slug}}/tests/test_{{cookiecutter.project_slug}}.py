@@ -7,14 +7,10 @@
 
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
-{% if cookiecutter.use_pytest == 'y' -%}
 import pytest
-{% else -%}
 import unittest
-{%- endif %}
 
 import {{ cookiecutter.project_slug }}
-{%- if cookiecutter.use_pytest == 'y' %}
 
 @pytest.fixture
 def response():
@@ -26,7 +22,6 @@ def test_content(response):
     """Sample pytest test function which prints the package version."""
     assert {{ cookiecutter.project_slug }}.__version__ == "{{ cookiecutter.version }}"
 
-{%- else %}
 
 class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
     """Tests for `{{ cookiecutter.project_slug }}` package."""
@@ -39,4 +34,3 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
 
     def test_000_something(self):
         """Test something."""
-{%- endif %}

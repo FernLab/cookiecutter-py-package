@@ -91,7 +91,6 @@ You need to fill the following options:
        "project_short_description": "A short description of your package. (Can be left empty)",
        "pypi_username": "In case you want to publish on PyPi add your username",
        "version": "0.1.0",
-       "use_pytest": "y",
        "add_pyup_badge": "n",
        "command_line_interface": ["Argparse", "No command-line interface"],
        "create_author_file": "y",
