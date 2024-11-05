@@ -95,9 +95,9 @@ You need to fill the following options:
        "add_pyup_badge": "n",
        "command_line_interface": ["Argparse", "No command-line interface"],
        "create_author_file": "y",
-       "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "EUPL-1.2", "NOASSERTION"]
+       "open_source_license": ["EUPL-1.2", "MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-or-later", "NOASSERTION"]
 
-Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 6), the EUPL License. Could be changed later on if necessary.
+Note: Depending on your project choose the appropriate License. For most of the projects it is recommended option 1), the EUPL License. Could be changed later on if necessary.
 
 Step 3: Create gitlab repository.
 ---------------------------------
