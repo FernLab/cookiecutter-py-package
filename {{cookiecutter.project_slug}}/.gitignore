@@ -48,6 +48,9 @@ coverage.xml
 report.xml
 report.html
 
+# pre-commit
+tests/linting/
+
 # Translations
 *.mo
 *.pot
