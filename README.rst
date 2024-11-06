@@ -16,7 +16,7 @@ For more information on the original package please see:
 Features of FERN.Lab cookiecutter pypackage
 ------------------------------------------
 
-* Testing setup with ``unittest`` or ``pytest``
+* Testing setup with ``pytest``
 * Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
 * Licence selection
 * Auto-release to PyPI_ when you push a new tag to master (optional)
