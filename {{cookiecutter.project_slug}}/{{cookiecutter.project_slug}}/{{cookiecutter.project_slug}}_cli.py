@@ -10,10 +10,11 @@
 
 import argparse
 {%- endif %}
-
 import sys
 
 {%- if cookiecutter.command_line_interface|lower == 'argparse' %}
+
+
 def get_argparser():
     """Get a console argument parser for {{ cookiecutter.project_name }}."""
     parser = argparse.ArgumentParser()
@@ -28,8 +29,7 @@ def main():
     parsed_args = argparser.parse_args()
 
     print("Arguments: " + str(parsed_args._))
-    print("""Replace this message by putting your code into 
-    {{cookiecutter.project_slug}}.{{cookiecutter.project_slug}}_cli""")
+    print("Replace this message by putting your code into {{cookiecutter.project_slug}}.{{cookiecutter.project_slug}}_cli")
     return 0
 {%- endif %}
 

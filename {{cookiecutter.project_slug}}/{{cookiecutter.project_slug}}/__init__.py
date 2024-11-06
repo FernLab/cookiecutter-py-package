@@ -10,5 +10,4 @@ __email__ = "{{ cookiecutter.email }}"
 
 from .version import __version__
 
-
 __all__ = ["__version__"]
