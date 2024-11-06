@@ -36,12 +36,6 @@ For Every Release
 
         python setup.py develop
 
-#. Run the tests:
-
-    .. code-block:: bash
-
-        tox
-
 #. Push the commit:
 
     .. code-block:: bash
@@ -56,7 +50,7 @@ For Every Release
 
 #. Check the PyPI listing page to make sure that the README, release notes, and roadmap display properly. If not, try one of these:
 
-    #. Copy and paste the RestructuredText into http://rst.ninjs.org/ to find out what broke the formatting.
+    #. Use a tool like https://pypi.org/project/rstcheck/ to find out what broke the formatting.
 
     #. Check your long_description locally:
 
