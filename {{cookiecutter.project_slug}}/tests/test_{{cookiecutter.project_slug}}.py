@@ -24,7 +24,7 @@ def test_content(response):
 class Test{{ cookiecutter.project_slug|title }}:
     """Tests for `{{ cookiecutter.project_slug }}` package."""
 
-        @classmethod
+    @classmethod
     def setup_class(cls):
         """Run once for the entire class to set up any state."""
         print("Setting up Test_{{ cookiecutter.project_slug|title }} class")
