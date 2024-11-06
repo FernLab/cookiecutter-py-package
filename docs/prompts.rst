@@ -43,9 +43,6 @@ Options
 
 The following package configuration options set up different features for your project.
 
-use_pytest
-    Whether to use `pytest <https://docs.pytest.org/en/latest/>`_
-
 add_pyup_badge
     Whether to include a `pyup <https://github.com/pyupio/pyup>`_ badge
 
