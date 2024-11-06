@@ -27,12 +27,12 @@ class Test{{ cookiecutter.project_slug|title }}:
         @classmethod
     def setup_class(cls):
         """Run once for the entire class to set up any state."""
-        print("Setting up Test{{ cookiecutter.project_slug|title }} class")
+        print("Setting up Test_{{ cookiecutter.project_slug|title }} class")
 
     @classmethod
     def teardown_class(cls):
         """Run once after all tests in the class have run."""
-        print("Tearing down Test{{ cookiecutter.project_slug|title }} class")
+        print("Tearing down Test_{{ cookiecutter.project_slug|title }} class")
 
     def setup_method(self, method):
         """Run before each test method to set up clean state."""
