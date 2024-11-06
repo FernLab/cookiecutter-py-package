@@ -164,8 +164,7 @@ def test_bake_selecting_license(cookies):
 
 def test_using_pytest(cookies):
     with bake_in_temp_dir(
-        cookies,
-        extra_context={'use_pytest': 'y'}
+        cookies
     ) as result:
         assert result.project.isdir()
         test_file_path = result.project.join(
@@ -175,20 +174,6 @@ def test_using_pytest(cookies):
         assert "import pytest" in ''.join(lines)
         # Test the new pytest target
         run_inside_dir('pytest', str(result.project)) == 0
-
-
-def test_not_using_pytest(cookies):
-    with bake_in_temp_dir(
-        cookies,
-        extra_context={'use_pytest': 'n'}
-    ) as result:
-        assert result.project.isdir()
-        test_file_path = result.project.join(
-            'tests/test_python_boilerplate.py'
-        )
-        lines = test_file_path.readlines()
-        assert "import unittest" in ''.join(lines)
-        assert "import pytest" not in ''.join(lines)
 
 def test_bake_with_no_console_script(cookies):
     context = {'command_line_interface': "No command-line interface"}
