@@ -95,9 +95,16 @@ dev = [
 {%- if cookiecutter.use_precommit == 'y' %}
 [tool.ruff]
 # Top-level settings for Ruff, like exclusion patterns or file line endings, can go here.
+lint.select = ["D", "N"]  # Enable docstring checks and Numpy checks
+lint.ignore = ["D203", "D213"]  # Example ignores for specific codes that conflict with NumPy style
+
 
 [tool.ruff.format]
 docstring-code-format = true
+
+[tool.darglint]
+docstring_style = "numpy"
+strictness = 3  # Adjust to 3 for even more detailed messages
 {%- endif %}
 
 [tool.setuptools]
