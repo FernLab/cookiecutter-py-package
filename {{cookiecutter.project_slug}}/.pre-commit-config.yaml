@@ -28,7 +28,7 @@ repos:
 
   # automatically format docstrings to match NumPy conventions
   - repo: https://github.com/myint/docformatter
-    rev: "master"  # Use the latest version
+    rev: "master"  # Use the latest version, waiting for a new release
     hooks:
       - id: docformatter
         language: python
